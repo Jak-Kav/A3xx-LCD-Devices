@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModuleName>MobiFlight Mega Kav</ModuleName>
+  <PowerSavingTime>600</PowerSavingTime>
+  <LcdDisplay Name="FCU" Address="39" Cols="16" Lines="1" />
+  <LcdDisplay Name="EFIS L" Address="32" Cols="16" Lines="2" />
+  <LcdDisplay Name="EFIS R" Address="35" Cols="16" Lines="3" />
+</Config>
