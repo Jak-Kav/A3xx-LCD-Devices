@@ -1,20 +1,33 @@
 Here you can download the config files for MobiFlight, and the precompiled binary to flash to an Arduino Mega.    
 
-As this has been precompiled for you, you can't change the pins. They must be connected as follows:    
-<b>FCU</b>
-* CS = Pin 12
-* CLK = Pin 11
-* DATA = Pin 8 
-   
-<b>EFIS L</b>
-* CS = Pin 32
-* CLK = Pin 33
-* DATA = Pin 34
+You need to put the `arduino_mega_kav.board.json` in your MobiFlight connector directory manually.    
+`C:\...AppData\Local\MobiFlight\MobiFlight Connector\Boards\`     
+    
+It should be setup as a normal `LCD DISPLAY` from the 'Add Device' menu in the MobiFlight Modules settings page.    
+![Device Choice](https://cdn.shopify.com/s/files/1/0736/3588/9464/files/Capture2.png?v=1686832847)    
+It will send a string as it's LCD output, and that will be converted to a method and value in the custom LCD library.   
+To use the precompiled HEX version, please connect to the following arduino mega pins:   
+<b>FCU</b>    
+CS = 12   
+CLK = 11   
+DATA = 8    
 
-<b>EFIS R</b>
-* CS = Pin 35
-* CLK = Pin 36
-* DATA = Pin 37
+<b>EFIS LEFT</b>    
+CS = 32   
+CLK = 33   
+DATA = 34      
+
+<b>EFIS RIGHT</b>    
+CS = 35   
+CLK = 36   
+DATA = 37    
+
+If you wish to compile your own version with different pin numbers, you should change the values in `LCDDisplayCustom.cpp` in the `Add` function.    
+We have only compiled and tested for the Arduino Mega 2560 board.
+
+In `MFBoards.h`, we have created this as a new board type, and this should be reflected in the MobiFlight Connector when setting up.    
+The devices should always be in this order, otherwise the data will be sent to the wrong device. <b>This is critical!</b>    
+![New Board Type](https://cdn.shopify.com/s/files/1/0736/3588/9464/files/Capture1.jpg?v=1686832848)   
 
 We recommend using ['XLoader'](https://github.com/binaryupdates/xLoader) to simply upload the .hex file to the arduino.    
 It's a very simple process, but there are some step-by-step tutorials on Google if you need them.    
