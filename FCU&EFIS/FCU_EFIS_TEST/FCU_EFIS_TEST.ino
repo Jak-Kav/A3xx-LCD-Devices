@@ -1,8 +1,10 @@
 /**
 Kav Simulations FCU LCD Example Code
 Written by: James Kavanagh
-This example code will demonstrate the FCU working on a simple loop.
+This example code will demonstrate the FCU & EFIS working on a simple loop.
 It is designed to show you how to call the functions and set up the device.
+
+If you only have 1 EFIS, you can still run this code. It won't matter that the second one isn't plugged in.
 **/
 
 // Include the required libraries
