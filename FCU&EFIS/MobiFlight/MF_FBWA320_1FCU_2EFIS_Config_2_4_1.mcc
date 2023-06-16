@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MobiflightConnector>
+  <outputs>
+    <config guid="4ccb2a83-f260-4d6a-8639-36636661e28f">
+      <active>true</active>
+      <description>SPEED - Selected_Speed (Knots or Mach)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setSpd=$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="de93b7c1-0691-4ea8-9278-abec7a157f1c" operand="&gt;" value="99" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="A" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="@" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="?" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="!" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="0422fff5-cc78-40d1-9634-360b71bdde1f">
+      <active>false</active>
+      <description>SPEED - Current_Speed_Target (Selected or Managed)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT AIRSPEED HOLD VAR, knot)" UUID="5da88d8d-1325-4894-9258-081fc23dadec" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setSpd=$$$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="A" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="@" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="?" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="34911206-59d1-4e37-a037-37107eb62df3">
+      <active>true</active>
+      <description>SPEED - Managed_Dashes (0  or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_SPD_MANAGED_DASHES)" UUID="fd53b904-19b1-42f7-b427-31f4e34ba1d7" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setSpdDash=$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" operand="&lt;" value="1" logic="and" />
+          <precondition type="config" active="true" ref="de93b7c1-0691-4ea8-9278-abec7a157f1c" operand="&lt;" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="A" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="@" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d">
+      <active>true</active>
+      <description>SPEED - Managed_Dot (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_SPD_MANAGED_DOT)" UUID="d2e55c8e-41a1-4e05-8d2e-6afdd660d0e2" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setSpdDot=$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="A" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="3d11ca79-1463-47ec-b7bb-ea3808c17913">
+      <active>true</active>
+      <description>HEADING - Selected_Heading (Number)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_HEADING_SELECTED)" UUID="a20b8246-d975-4b5b-a335-95cd15157da3" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setHdg=$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" operand="&lt;" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="e829147f-cf95-4fb3-be51-af850bd9c2bc">
+      <active>true</active>
+      <description>HEADING - Managed_Dashes (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_HDG_MANAGED_DASHES)" UUID="74e0f839-1cea-40c7-a6dd-a65eef34cf9d" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setHdgDash=$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" operand="&lt;" value="0" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="8e365516-9c51-42a4-9924-3b182b8f0fcd" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="8e365516-9c51-42a4-9924-3b182b8f0fcd">
+      <active>true</active>
+      <description>HEADING - Managed_Dot (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_HDG_MANAGED_DOT)" UUID="efe73349-997f-409e-b73b-89172e03a62b" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setHdgDot=$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="17f4d690-2433-420b-a8f9-63ada089540d">
+      <active>true</active>
+      <description>ALTITUDE - Selected_Altitude (Number)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT ALTITUDE LOCK VAR:3, Feet)" UUID="0" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setAlt=$$$$$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="0cf4aa95-b830-4820-a353-dba198e646da">
+      <active>true</active>
+      <description>ALTITUDE - Managed_Altitude (DOT) (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_ALT_MANAGED)" UUID="01080513-2a03-4e42-981b-bd0692ab7646" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setAltDot=$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="d5585bb5-41f8-4b94-958d-eda396a783e3">
+      <active>true</active>
+      <description>ALTITUDE - FPA_Value (Number)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_FPA_SELECTED)" UUID="fc8b0ff4-8c94-4373-bdc6-1cb6a365f301" />
+        <modifiers>
+          <transformation active="True" expression="Round($*10, 0.1)" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setFPA=$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="7f8454e4-8751-456e-9f2d-3aed93e5ed2d" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="b8c4cbba-e408-4a79-bf89-369630ad3fc1">
+      <active>true</active>
+      <description>ALTITUDE - VS_Value (Number)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_VS_SELECTED)" UUID="bb5af9a4-b690-45e6-b02a-b81a5b137ed5" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setVS=$$$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="7f8454e4-8751-456e-9f2d-3aed93e5ed2d" operand="=" value="0" logic="and" />
+          <precondition type="config" active="true" ref="aa86d301-0974-4437-873d-fc8c709d2c7f" operand="!=" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="aa86d301-0974-4437-873d-fc8c709d2c7f">
+      <active>true</active>
+      <description>ALTITUDE - VS_Managed (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_VS_MANAGED)" UUID="17c91c46-676d-41d6-9108-893e8d0731ed" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setVSDash=$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="b95a9673-c3f4-49d5-a4f0-b2ed5a827826" operand="=" value="1" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b95a9673-c3f4-49d5-a4f0-b2ed5a827826">
+      <active>true</active>
+      <description>ALTITUDE - VS_Managed Condition</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_FCU_VS_MANAGED)" UUID="17c91c46-676d-41d6-9108-893e8d0731ed" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="LcdDisplay" serial="-" trigger="normal" address="LcdDisplay">
+          <line>setVSDash=$</line>
+        </display>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="7f8454e4-8751-456e-9f2d-3aed93e5ed2d">
+      <active>true</active>
+      <description>COMMON - TRK/FPA Active (0 or 1)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_TRK_FPA_MODE_ACTIVE)" UUID="20864ce0-eef8-48ab-97cb-9ca8a5a0cefd" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>toggleTrkHdg=$</line>
+        </display>
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="de93b7c1-0691-4ea8-9278-abec7a157f1c">
+      <active>true</active>
+      <description>MACH - Selected_Speed (Knots or Mach)</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <modifiers>
+          <transformation active="True" expression="Round($*100, 0.01)" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="1" operand="&lt;" ifValue="" elseValue="" />
+          <interpolation active="False">
+            <value x="0" y="0" />
+            <value x="1024" y="1024" />
+          </interpolation>
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="FCU">
+          <line>setMach=0$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" operand="&lt;" value="1" logic="and" />
+          <precondition type="config" active="true" ref="34911206-59d1-4e37-a037-37107eb62df3" operand="!=" value="1" logic="and" />
+        </preconditions>
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="a2ee8bc2-0e19-402f-bc38-79f5e8276c60">
+      <active>false</active>
+      <description>-</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="LVAR" Value="" />
+        <modifiers>
+          <transformation active="True" expression="Round($*100, 0.01)" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="1" operand="&lt;" ifValue="" elseValue="" />
+          <interpolation active="False">
+            <value x="0" y="0" />
+            <value x="1024" y="1024" />
+          </interpolation>
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs>
+          <configref active="False" ref="e829147f-cf95-4fb3-be51-af850bd9c2bc" placeholder="B" />
+          <configref active="False" ref="3d11ca79-1463-47ec-b7bb-ea3808c17913" placeholder="A" />
+          <configref active="False" ref="03bdb7db-7b38-4c5b-9fdc-49b8741d1a4d" placeholder="@" />
+          <configref active="False" ref="34911206-59d1-4e37-a037-37107eb62df3" placeholder="?" />
+          <configref active="False" ref="0422fff5-cc78-40d1-9634-360b71bdde1f" placeholder="!" />
+          <configref active="False" ref="4ccb2a83-f260-4d6a-8639-36636661e28f" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="b09a76a6-2870-4423-8073-f871996c43fa">
+      <active>true</active>
+      <description>EFIS L QNH</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:KOHLSMAN SETTING HG, Number) 100 / near" UUID="6a967ca0-889a-4841-8244-7aae9c214407" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS L">
+          <line>setQNH=$$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="b2ee425f-4a5c-43d3-935d-2f5e7c02da9c" operand="&lt;" value="1999" logic="and" />
+          <precondition type="config" active="true" ref="b2ee425f-4a5c-43d3-935d-2f5e7c02da9c" operand="&gt;" value="99" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="ccab4d85-1d7d-4808-9b9f-d8eb2a755b63">
+      <active>true</active>
+      <description>EFIS L QFE</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:KOHLSMAN SETTING HG, Number) 33.866 / near" UUID="ca26c5cf-f9a9-46cd-9e47-1d50f9c03fe8" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS L">
+          <line>setQFE=$$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="b2ee425f-4a5c-43d3-935d-2f5e7c02da9c" operand="&gt;" value="1999" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="16c921f4-2ab0-402a-984f-be41334f25e5">
+      <active>true</active>
+      <description>EFIS L STD</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:XMLVAR_Baro1_Mode) 2 &gt; if{ 99 } els{ (L:XMLVAR_Baro_Selector_HPA_1,bool) ! if{ (A:KOHLSMAN SETTING HG, inHg) 100 * near } els{ (A:KOHLSMAN SETTING HG, mbar) near } }" UUID="98d91496-0202-4e60-b0cc-5157ceb25af5" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS L">
+          <line>setStd=1</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="b2ee425f-4a5c-43d3-935d-2f5e7c02da9c" operand="&lt;" value="999" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b2ee425f-4a5c-43d3-935d-2f5e7c02da9c">
+      <active>true</active>
+      <description>EFIS L Condition</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:XMLVAR_Baro1_Mode) 2 &gt; if{ 99 } els{ (L:XMLVAR_Baro_Selector_HPA_1,bool) ! if{ (A:KOHLSMAN SETTING HG, inHg) 100 * near } els{ (A:KOHLSMAN SETTING HG, mbar) near } }" UUID="98d91496-0202-4e60-b0cc-5157ceb25af5" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="bbde8461-01b6-4e37-915f-daa550d43c26">
+      <active>false</active>
+      <description>-</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="LVAR" Value="" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="" serial="-" trigger="change" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="e6c5f886-13e9-4e51-8f04-d7d2a9e5f7e5">
+      <active>true</active>
+      <description>EFIS R QNH</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:KOHLSMAN SETTING HG, Number) 100 / near" UUID="6a967ca0-889a-4841-8244-7aae9c214407" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS R">
+          <line>setQNH=$$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="670c92d8-6c92-4e93-ba70-b2520795417c" operand="&lt;" value="1999" logic="and" />
+          <precondition type="config" active="true" ref="670c92d8-6c92-4e93-ba70-b2520795417c" operand="&gt;" value="99" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="f75bcca8-d348-4371-a053-682e8f3fe234">
+      <active>true</active>
+      <description>EFIS R QFE</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:KOHLSMAN SETTING HG, Number) 33.866 / near" UUID="ca26c5cf-f9a9-46cd-9e47-1d50f9c03fe8" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS R">
+          <line>setQFE=$$$$</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="670c92d8-6c92-4e93-ba70-b2520795417c" operand="&gt;" value="1999" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="158a81bc-8bcd-4312-a005-92518b4e3e1a">
+      <active>true</active>
+      <description>EFIS R STD</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:XMLVAR_Baro1_Mode) 2 &gt; if{ 99 } els{ (L:XMLVAR_Baro_Selector_HPA_1,bool) ! if{ (A:KOHLSMAN SETTING HG, inHg) 100 * near } els{ (A:KOHLSMAN SETTING HG, mbar) near } }" UUID="98d91496-0202-4e60-b0cc-5157ceb25af5" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="LcdDisplay" serial="MobiFlight Mega Kav/ SN-1f0-834" trigger="normal" address="EFIS R">
+          <line>setStd=1</line>
+        </display>
+        <preconditions>
+          <precondition type="config" active="true" ref="670c92d8-6c92-4e93-ba70-b2520795417c" operand="&lt;" value="999" logic="and" />
+        </preconditions>
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="670c92d8-6c92-4e93-ba70-b2520795417c">
+      <active>true</active>
+      <description>EFIS R Condition</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:XMLVAR_Baro1_Mode) 2 &gt; if{ 99 } els{ (L:XMLVAR_Baro_Selector_HPA_1,bool) ! if{ (A:KOHLSMAN SETTING HG, inHg) 100 * near } els{ (A:KOHLSMAN SETTING HG, mbar) near } }" UUID="98d91496-0202-4e60-b0cc-5157ceb25af5" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="31dec99e-3065-4e44-b871-a57caa26b3ed">
+      <active>true</active>
+      <description>-</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="LVAR" Value="" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="True" value="" operand="=" ifValue="1" elseValue="0" />
+        </modifiers>
+        <display type="" serial="-" trigger="change" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </outputs>
+  <inputs />
+</MobiflightConnector>
