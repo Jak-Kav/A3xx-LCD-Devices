@@ -29,8 +29,10 @@ In `MFBoards.h`, we have created this as a new board type, and this should be re
 The devices should always be in this order, otherwise the data will be sent to the wrong device. <b>This is critical!</b>    
 ![New Board Type](https://cdn.shopify.com/s/files/1/0736/3588/9464/files/Capture1.jpg?v=1686832848)   
 
-We recommend using ['XLoader'](https://github.com/binaryupdates/xLoader) to simply upload the .hex file to the arduino.    
-It's a very simple process, but there are some step-by-step tutorials on Google if you need them.    
+You can now upload the firmware directly to the Mega through MobiFlight!    
+Once you have placed the `arduino_mega_kav.board.json` into the Boards folder, you should then place the `.hex` file in the `C:...\AppData\Local\MobiFlight\MobiFlight Connector\firmware\` direcctory.    
+You can now simply click the `Update Firmware` button and ensure that the device shows `Firmware 2.4.1` and the module type and name is `MobiFlight Mega Kav`.    
+![Firmware Update](https://cdn.shopify.com/s/files/1/0736/3588/9464/files/Capture4.jpg?v=1686923609)   
 
 KNOWN WORKING VERSIONS:    
 MobiFlight <b>9.7.1</b>    
