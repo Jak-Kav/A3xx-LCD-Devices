@@ -38,7 +38,7 @@
     "FirmwareBaseName": "mobiflight_mega_kav",
     "FirmwareExtension": "hex",
     "LatestFirmwareVersion": "2.4.1",
-    "FriendlyName": "Arduino Mega 2560",
+    "FriendlyName": "Arduino Mega 2560 Kav",
     "MobiFlightType": "MobiFlight Mega Kav",
     "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex"
   },
