@@ -1,5 +1,5 @@
 /**
- * Kav A3XX EFIS LCD
+ * KAV A3XX EFIS LCD
  * Written by: James Kavanagh & Keith Greenwood
  * This library has been written to drive the 'Kav Simulations' EFIS LCD Display.
  */
@@ -29,7 +29,6 @@ private:
   // Methods
   void handleMobiFlightCmd(char *string);
   void displayDigit(uint8_t address, uint8_t digit);
-  //void setBufferBit(uint8_t address, uint8_t bit, uint8_t enabled);
   void refreshLCD(uint8_t address);
   
 public:

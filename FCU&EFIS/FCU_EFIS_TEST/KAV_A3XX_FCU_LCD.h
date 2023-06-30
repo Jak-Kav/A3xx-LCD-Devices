@@ -31,7 +31,6 @@ private:
   // Methods
   void handleMobiFlightCmd(char *string);
   void displayDigit(uint8_t address, uint8_t digit);
-  //void setBufferBit(uint8_t address, uint8_t bit, uint8_t enabled);
   void refreshLCD(uint8_t address);
   
 public:
