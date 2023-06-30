@@ -1,10 +1,10 @@
 #include "KAV_A3XX_EFIS_LCD.h"
+#include "commandmessenger.h"
 
 #define DIGIT_ONE   0
 #define DIGIT_TWO   1
 #define DIGIT_THREE 2
 #define DIGIT_FOUR  3
-
 #define SET_BUFF_BIT(addr, bit, enabled)          buffer[addr] = (buffer[addr] & (~(1 << (bit)))) | (((enabled & 1)) << (bit))
 
 void KAV_A3XX_EFIS_LCD::begin()
@@ -101,6 +101,14 @@ void KAV_A3XX_EFIS_LCD::showStd(uint16_t state)
 void KAV_A3XX_EFIS_LCD::showQNHValue(uint16_t value)
 {
     if (value > 9999) value = 9999;
+    if (value < 2000) {
+        // If value is less than 2000, then it's hPa, so no decimal point.
+        setDot(false);
+    } else {
+        // If value is greater than 2000, then it's inHg, so decimal point.
+        setDot(true);
+    }
+
     displayDigit(DIGIT_FOUR, (value % 10));
     value = value / 10;
     displayDigit(DIGIT_THREE, (value % 10));
@@ -108,14 +116,21 @@ void KAV_A3XX_EFIS_LCD::showQNHValue(uint16_t value)
     displayDigit(DIGIT_TWO, (value % 10));
     displayDigit(DIGIT_ONE, (value / 10));
     
-    setDot(false);
     setQFE(false);
-    setQNH(true);;
+    setQNH(true);
 }
 
 void KAV_A3XX_EFIS_LCD::showQFEValue(uint16_t value)
 {
     if (value > 9999) value = 9999;
+    if (value < 2000) {
+        // If value is less than 2000, then it's hPa, so no decimal point.
+        setDot(false);
+    } else {
+        // If value is greater than 2000, then it's inHg, so decimal point.
+        setDot(true);
+    }
+
     displayDigit(DIGIT_FOUR, (value % 10));
     value = value / 10;
     displayDigit(DIGIT_THREE, (value % 10));
@@ -123,7 +138,6 @@ void KAV_A3XX_EFIS_LCD::showQFEValue(uint16_t value)
     displayDigit(DIGIT_TWO, (value % 10));
     displayDigit(DIGIT_ONE, (value / 10));
     
-    setDot(true);
     setQFE(true);
     setQNH(false);
 }
@@ -174,5 +188,4 @@ void KAV_A3XX_EFIS_LCD::handleMobiFlightCmd(char *cmd)  {
        if (strcmp(cmd, "setQNH") == 0) showQNHValue((uint16_t)data);
   else if (strcmp(cmd, "setQFE") == 0) showQFEValue((uint16_t)data);
   else if (strcmp(cmd, "setStd") == 0) showStd((uint16_t)data);
-
 }

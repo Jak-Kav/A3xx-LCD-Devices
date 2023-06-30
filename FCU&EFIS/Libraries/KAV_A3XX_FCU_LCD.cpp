@@ -1,4 +1,5 @@
 #include "KAV_A3XX_FCU_LCD.h"
+#include "commandmessenger.h"
 
 #define SPD_HUN   0
 #define SPD_TEN   1
@@ -81,7 +82,6 @@ void KAV_A3XX_FCU_LCD::setSpeedLabel(bool enabled) {
 
 void KAV_A3XX_FCU_LCD::setMachLabel(bool enabled) {
   SET_BUFF_BIT(SPECIALS, 6, enabled);
-  SET_BUFF_BIT(SPD_TEN, 0, enabled); // Decimal-point
   refreshLCD(SPECIALS);
 }
 
@@ -280,8 +280,9 @@ void KAV_A3XX_FCU_LCD::setVrtSpdDashes(int8_t state) {
   else enabled = true;
   if (enabled) {
     val = 10;
-    SET_BUFF_BIT(VRT_UNIT, 0, true); // Set the plus/minus to minus
+    SET_BUFF_BIT(VRT_UNIT, 0, true);  // Set the plus/minus to minus
     SET_BUFF_BIT(VRT_TEN, 0, false);  // Remove the plus segment
+    SET_BUFF_BIT(VRT_HUN, 0, false);  // Remove the decimal point
   } else {
     val = 11; 
     SET_BUFF_BIT(VRT_UNIT, 0, false); // Turn it off
@@ -317,11 +318,13 @@ void KAV_A3XX_FCU_LCD::setTrackMode() {
 void KAV_A3XX_FCU_LCD::setSpeedMode(uint16_t value) {
   setSpeedLabel(true);
   setMachLabel(false);
+  SET_BUFF_BIT(SPD_TEN, 0, false); // Decimal-point
   showSpeedValue(value);
 }
 void KAV_A3XX_FCU_LCD::setMachMode(uint16_t value) {
   setSpeedLabel(false);
   setMachLabel(true);
+  SET_BUFF_BIT(SPD_TEN, 0, true); // Decimal-point
   showSpeedValue(value);
 }
 
@@ -379,9 +382,9 @@ void KAV_A3XX_FCU_LCD::handleMobiFlightCmd(char *cmd) {
   else if (strcmp(cmd, "setSpdDot")==0) setSpeedDot((int8_t)data);
   else if (strcmp(cmd, "setHdgDot")==0) setHeadingDot((int8_t)data);
   else if (strcmp(cmd, "setAltDot")==0) setAltitudeDot((int8_t)data);
-  else if (strcmp(cmd, "toggleTrkHdg")==0) toggleTrkHdgMode((int8_t)data);
-
-  // FBW LVars Site
-  // https://docs.flybywiresim.com/fbw-a32nx/feature-guides/autopilot-fbw/#speed
-  
+  else if (strcmp(cmd, "toggleTrkHdg")==0) toggleTrkHdgMode((int8_t)data);  
+  // New Entries
+  else if (strcmp(cmd, "setSpdLabel")==0) setSpeedLabel((int8_t)data);
+  else if (strcmp(cmd, "setMachLabel")==0) setMachLabel((int8_t)data);
+  else if (strcmp(cmd, "setSpdOnly")==0) showSpeedValue((uint16_t)data);
 }
