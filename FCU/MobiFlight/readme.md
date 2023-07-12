@@ -1,3 +1,9 @@
+<h1>THIS IS OLD! DO NOT USE!</h1>    
+<h2>PLEASE GOTO: https://github.com/Jak-Kav/A3xx-LCD-Devices/tree/main/FCU%26EFIS/MobiFlight FOR MOST RECENT VERSION</h2>    
+<i>We have kept this here for referencing from the tutorial videos.</i>    
+
+- - - - - - - - - -    
+
 Here you can download the config files for MobiFlight, and the precompiled binary to flash to an Arduino Mega.    
 
 As this has been precompiled for you, you can't change the pins. They must be connected as follows:    
