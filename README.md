@@ -2,24 +2,23 @@
 
 This repository contains all the relevant files you need to get up and running with our LCD devices.    
 
-Currently only the A3xx FCU LCD is available, but the EFIS LCD is coming soon.
-
 ### Most Recent Version In `FCU&EFIS` Directory. Use This One!
 
 Standalone Setup Video: https://youtu.be/K2MG2Fc2na8    <b><-- Start here to get the demo example working first!</b>    
-MobiFlight Setup Video: https://youtu.be/qKGPGoqFOwo    
+MobiFlight Setup Video: https://youtu.be/qKGPGoqFOwo     
+<b>New Firmware Upgrade Video: https://youtu.be/AQkjJ02LWNs</b>     
 
 - - - - - - - - - -
 # Jak Kav Custom Firmware   
 This is my custom firware for the MobiFlight modules.   
 It allows the user to use my custom LCD's for the FCU and EFIS.   
 <b>There is a pre-built HEX file hardcoded with the pins detailed below</b>
-Current release is inline with MobiFlight V2.4.1, and you should use the file named `mobiflight_mega_kav_2_4_1.hex`, regardless of whether you're using just '1 FCU', '1 FCU and 1 EFIS' or '1 FCU and 2 EFIS'.    
+Current release is inline with MobiFlight V2.4.x, and you should use the file named `mobiflight_mega_kav_2_4_2.hex`, regardless of whether you're using just '1 FCU', '1 FCU and 1 EFIS' or '1 FCU and 2 EFIS'.    
 
 You need to put the `arduino_mega_kav.board.json` in your MobiFlight connector directory manually.    
 `C:\...AppData\Local\MobiFlight\MobiFlight Connector\Boards\`     
-You should then place the `mobiflight_mega_kav_2_4_1.hex` file in the `C:...\AppData\Local\MobiFlight\MobiFlight Connector\firmware\` direcctory.    
-You can now simply click the `Update Firmware` button and ensure that the device shows `Firmware 2.4.1` and the module type and name is `MobiFlight Mega Kav`.    
+You should then place the `mobiflight_mega_kav_2_4_2.hex` file in the `C:...\AppData\Local\MobiFlight\MobiFlight Connector\firmware\` direcctory.    
+You can now simply click the `Update Firmware` button and ensure that the device shows `Firmware 2.4.2` and the module type and name is `MobiFlight Mega Kav`.    
 ![Firmware Update](https://cdn.shopify.com/s/files/1/0736/3588/9464/files/Capture4.jpg?v=1686923609)  
 
 It should be setup as a normal `LCD DISPLAY` from the 'Add Device' menu in the MobiFlight Modules settings page.    
