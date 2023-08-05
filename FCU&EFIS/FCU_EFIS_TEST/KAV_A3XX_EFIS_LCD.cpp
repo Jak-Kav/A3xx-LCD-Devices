@@ -1,5 +1,5 @@
 #include "KAV_A3XX_EFIS_LCD.h"
-#include "commandmessenger.h"
+// #include "commandmessenger.h" // This line is only needed when using MobiFlight
 
 #define DIGIT_ONE   0
 #define DIGIT_TWO   1
