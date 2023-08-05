@@ -1,5 +1,5 @@
 #include "KAV_A3XX_FCU_LCD.h"
-#include "commandmessenger.h"
+// #include "commandmessenger.h" // Only needed when using MobiFlight
 
 #define SPD_HUN   0
 #define SPD_TEN   1
