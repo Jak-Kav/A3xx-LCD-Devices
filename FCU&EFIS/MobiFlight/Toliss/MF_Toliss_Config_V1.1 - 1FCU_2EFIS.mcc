@@ -150,7 +150,7 @@
       <active>true</active>
       <description>HEADING - Selected_Heading (Number)</description>
       <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <source type="XplaneDataRef" path="sim/cockpit/autopilot/heading" />
+        <source type="XplaneDataRef" path="sim/cockpit/autopilot/heading_mag" />
         <modifiers>
           <transformation active="True" expression="Round($, 0)" substrStart="0" substrEnd="7" />
           <comparison active="True" value="360" operand="=" ifValue="0" elseValue="" />
