@@ -33,8 +33,6 @@ void KAV_A3XX_FCU_LCD::begin() {
       
   // Initialises the buffer to all 0's.
   memset(buffer, 0, BUFFER_SIZE_MAX);
-  pinMode(10, OUTPUT);
-  digitalWrite(10, HIGH);
   setStartLabels();
 }
 
