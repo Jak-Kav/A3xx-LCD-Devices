@@ -1,3 +1,15 @@
+# IMPORTANT! NEW REPOSITORY!
+We are now transitioning over to a new repository: [https://github.com/Kav-Simulations](https://github.com/Kav-Simulations)     
+This is to accomdate our new natural integration with MobiFlight, and there is no longer any need for you to install our custom firmware or configuration files outside of MobiFlight.
+
+All of our devices and firmware are now included in MobiFlight, and so the only need for our GitHub repository access is to contribute to development. If you are an end user, and don't need to contribute code, then you no longer need to follow our original installation guides.     
+Please visit our YouTube [www.youtube.com/@kavsimulations5855](https://www.youtube.com/@kavsimulations5855/) for the latest video tutorial on getting setup with our devices.
+
+</br>
+<i>The original firmware will still be available for those that wish to continue using it, but it will no longer be supported or updated going forward. You can see the details below:</i>
+
+- - - - - - - - - -
+
 # A3xx-LCD-Devices
 
 This repository contains all the relevant files you need to get up and running with our LCD devices.    
